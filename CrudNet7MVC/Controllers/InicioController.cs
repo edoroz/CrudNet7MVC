@@ -12,13 +12,16 @@ namespace CrudNet7MVC.Controllers {
             _contexto = contexto;
         } //-ctr
 
+        [HttpGet]
         public async Task<IActionResult> Index() {
             return View(await _contexto.Contactos.ToListAsync());
         }
 
-        public IActionResult Privacy() {
+        [HttpGet]
+        public IActionResult Crear() {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error() {

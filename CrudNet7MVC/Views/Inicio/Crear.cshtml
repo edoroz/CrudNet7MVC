@@ -1,0 +1,60 @@
+﻿@model CrudNet7MVC.Models.Contacto
+
+@{
+    ViewData["Title"] = "Crear Contacto";
+}
+
+<h1 class="text-center">Contactos con .NET 7 (.NET Core MVC)</h1>
+
+<div class="row">
+    <div class="offset-9 col-3 mb-3">
+        <a class="btn btn-secondary d-block mx-auto btn-lg" asp-action="Crear" asp-controller="Inicio">
+            <i class="bi bi-person-plus-fill">&nbsp</i>Nuevo contacto
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h4 class="text-white"><strong>Lista de contactos</strong></h4>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Crear" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" placeholder="e.g. Juan Pérez" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Telefono" class="control-label"></label>
+                    <input asp-for="Telefono" class="form-control" placeholder="e.g. 1234567890"/>
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Celular" class="control-label"></label>
+                    <input asp-for="Celular" class="form-control" placeholder="e.g. 1234567890" />
+                    <span asp-validation-for="Celular" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" placeholder="e.g. tuemail@abc.com" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group-3">
+                    <button type="submit" class="btn btn-secondary d-block mx-auto">Crear Usuario</button>
+                </div>
+            </form>
+            <a asp-action="Index" asp-controller="Inicio">Volver</a>
+        </div>
+    </div>
+</div>
+
